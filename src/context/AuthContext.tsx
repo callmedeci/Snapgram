@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { createContext, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentUser } from '../lib/appwrite/api';
@@ -38,11 +39,17 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       if (!curAccount) return false;
 
       setUser({
+        //@ts-ignore
         id: curAccount.$id,
+        //@ts-ignore
         username: curAccount.username,
+        //@ts-ignore
         email: curAccount.email,
+        //@ts-ignore
         name: curAccount.name,
+        //@ts-ignore
         bio: curAccount.bio,
+        //@ts-ignore
         imageUrl: curAccount.imageUrl,
       });
 

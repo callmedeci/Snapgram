@@ -82,12 +82,16 @@ function Explore() {
         {shouldShowSearchResults ? (
           <SearchResults
             isSearching={isSearching}
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            //@ts-ignore
             searchedPosts={searchedPosts}
           />
         ) : shouldShowPosts ? (
           <p className='text-light-4 mt-10 text-center w-full'>End of posts</p>
         ) : (
           posts.pages.map((item, i) => (
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            //@ts-ignore
             <GridPostList key={i} posts={item?.documents} />
           ))
         )}

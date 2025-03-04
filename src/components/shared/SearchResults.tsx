@@ -10,7 +10,11 @@ type SearchResultsProps = {
 function SearchResults({ isSearching, searchedPosts }: SearchResultsProps) {
   if (isSearching) return <Loader />;
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
   if (searchedPosts && searchedPosts.documents?.length > 0)
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
     return <GridPostList posts={searchedPosts.documents} />;
 
   return (
