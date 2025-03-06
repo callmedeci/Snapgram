@@ -4,6 +4,9 @@ import { useGetSavedPosts } from '@/lib/react-query/querisAndMutations';
 
 function Saved() {
   const { savedPosts, isLoading } = useGetSavedPosts();
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
   const posts = savedPosts?.documents.map((item) => ({
     ...item,
     ...item.post,
