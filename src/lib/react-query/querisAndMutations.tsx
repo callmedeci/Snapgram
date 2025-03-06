@@ -20,6 +20,7 @@ import {
   getPostById,
   getInfinitePosts,
   searchPosts,
+  getSavedPosts,
 } from '../appwrite/api';
 import { QUERY_KEYS } from './queryKeys';
 
@@ -191,8 +192,6 @@ export function useDeletePost() {
   return { deletePost, isDeleting };
 }
 
-///////////
-
 //GET CURRENT USER
 export function useGetCurrentUser() {
   const { data: currentUser } = useQuery({
@@ -241,6 +240,7 @@ export function useGetPosts() {
   return { posts, isLoading, fetchNextPage, hasNextPage };
 }
 
+//Search Posts
 export function useSearchPosts(query: string) {
   const { data: searchedPosts, isLoading: isSearching } = useQuery({
     queryKey: [QUERY_KEYS.SEARCH_POSTS, query],
@@ -250,4 +250,15 @@ export function useSearchPosts(query: string) {
   });
 
   return { searchedPosts, isSearching };
+}
+
+//Get saved posts
+
+export function useGetSavedPosts() {
+  const { data: savedPosts, isLoading } = useQuery({
+    queryKey: [QUERY_KEYS.SAVED_POSTS],
+    queryFn: getSavedPosts,
+  });
+
+  return { savedPosts, isLoading };
 }

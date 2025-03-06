@@ -368,3 +368,20 @@ export async function searchPosts(searchPost: string) {
     console.log(error);
   }
 }
+
+//Saved posts
+export async function getSavedPosts() {
+  try {
+    const savedPosts = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.savesCollectionId
+    );
+
+    if (!savedPosts) throw new Error('Failed to fetch posts');
+
+    return savedPosts;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}

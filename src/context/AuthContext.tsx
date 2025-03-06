@@ -17,9 +17,9 @@ const INITIAL_USER = {
 const INITIAL_STATE = {
   user: INITIAL_USER,
   isLoading: false,
-  isAthenticated: false,
+  isAuthenticated: false,
   setUser: () => {},
-  setIsAthenticated: () => {},
+  setIsAuthenticated: () => {},
   checkAuthUser: async () => false as boolean,
 };
 
@@ -30,7 +30,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const [user, setUser] = useState<IUser>(INITIAL_USER);
   const [isLoading, setIsLoading] = useState(false);
-  const [isAthenticated, setIsAthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   async function checkAuthUser() {
     try {
@@ -53,7 +53,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         imageUrl: curAccount.imageUrl,
       });
 
-      setIsAthenticated(true);
+      setIsAuthenticated(true);
 
       return true;
     } catch (error) {
@@ -79,8 +79,8 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         user,
         setUser,
         isLoading,
-        isAthenticated,
-        setIsAthenticated,
+        isAuthenticated,
+        setIsAuthenticated,
         checkAuthUser,
       }}
     >
