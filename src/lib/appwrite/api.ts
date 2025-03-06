@@ -369,7 +369,7 @@ export async function searchPosts(searchPost: string) {
   }
 }
 
-//Saved posts
+//get Saved posts
 export async function getSavedPosts() {
   try {
     const savedPosts = await databases.listDocuments(
@@ -383,5 +383,40 @@ export async function getSavedPosts() {
   } catch (error) {
     console.log(error);
     return error;
+  }
+}
+
+//get All users
+export async function getAllUsers() {
+  try {
+    const users = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.userCollectionId
+    );
+
+    if (!users) throw new Error('Failed to fetch users');
+
+    return users;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+//get User
+export async function getUserById(userId: string) {
+  try {
+    const user = await databases.getDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.userCollectionId,
+      userId
+    );
+
+    console.log(user);
+
+    if (!user) throw new Error('Failed to fetch user');
+
+    return user;
+  } catch (error) {
+    console.log(error);
   }
 }

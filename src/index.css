@@ -114,7 +114,7 @@
 
   /* All Users */
   .user-container {
-    @apply max-w-5xl flex flex-col items-start w-full gap-6 md:gap-9;
+    @apply max-w-5xl flex flex-col items-start w-full gap-6 md:gap-9 py-10 px-5 md:p-14;
   }
 
   .user-grid {

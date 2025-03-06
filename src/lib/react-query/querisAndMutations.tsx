@@ -21,6 +21,8 @@ import {
   getInfinitePosts,
   searchPosts,
   getSavedPosts,
+  getAllUsers,
+  getUserById,
 } from '../appwrite/api';
 import { QUERY_KEYS } from './queryKeys';
 
@@ -253,7 +255,6 @@ export function useSearchPosts(query: string) {
 }
 
 //Get saved posts
-
 export function useGetSavedPosts() {
   const { data: savedPosts, isLoading } = useQuery({
     queryKey: [QUERY_KEYS.SAVED_POSTS],
@@ -261,4 +262,24 @@ export function useGetSavedPosts() {
   });
 
   return { savedPosts, isLoading };
+}
+
+//Get ALL-USER
+export function useGetAllusers() {
+  const { data: users, isLoading } = useQuery({
+    queryKey: [QUERY_KEYS.GET_USERS],
+    queryFn: getAllUsers,
+  });
+
+  return { users, isLoading };
+}
+
+//Get USER
+export function useGetUser(userId: string) {
+  const { data: user, isLoading } = useQuery({
+    queryKey: [QUERY_KEYS.GET_USER_BY_ID, userId],
+    queryFn: () => getUserById(userId),
+  });
+
+  return { user, isLoading };
 }

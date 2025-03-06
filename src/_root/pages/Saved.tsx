@@ -9,7 +9,12 @@ function Saved() {
     ...item.post,
   }));
 
-  if (isLoading) return <Loader />;
+  if (isLoading)
+    return (
+      <div className='flex-center w-full h-full'>
+        <Loader />
+      </div>
+    );
 
   return (
     <div className='saved-container'>
