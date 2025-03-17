@@ -29,7 +29,7 @@ A social media app where you can create posts, like and save content, explore ot
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/snapgram.git
+   git clone https://github.com/callmedeci/snapgram.git
    cd snapgram
    ```
 
