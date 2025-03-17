@@ -1,50 +1,52 @@
-# React + TypeScript + Vite
+# Snapgram
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A social media app where you can create posts, like and save content, explore other users on the People page, and seamlessly sign in and out. Simple, smooth, and built for sharing.
 
-Currently, two official plugins are available:
+## Features
+- **Post Creation**: Easily create and share posts with images.
+- **Like & Save**: Interact with posts by liking and saving them.
+- **User Discovery**: Explore and connect with other users on the People page.
+- **Authentication**: Secure login and logout with Appwrite.
+- **Form Validation**: Uses `react-hook-form` with `zod` for robust validation.
+- **Infinite Scrolling**: Smooth loading of content using `react-intersection-observer`.
+- **Optimized Performance**: Data fetching and caching with `@tanstack/react-query`.
+- **Notifications**: Instant feedback using `sonner`.
+- **File Uploads**: Image upload support with `react-dropzone`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **Frontend**: React, Vite, TypeScript
+- **State Management & Data Fetching**: React Query
+- **Routing**: React Router
+- **Styling**: TailwindCSS, Tailwind Merge
+- **Authentication & Database**: Appwrite
+- **Form Handling**: React-Hook-Form, Zod
+- **Image Uploads**: React-Dropzone
+- **Infinite Scrolling**: React-Intersection-Observer
+- **Notifications**: Sonner
+- **Linting & Code Quality**: ESLint, TypeScript ESLint
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/snapgram.git
+   cd snapgram
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+4. Build for production:
+   ```sh
+   npm run build
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Contributing
+Pull requests and feature suggestions are welcome. Open an issue to discuss proposed changes.
