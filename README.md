@@ -1,4 +1,4 @@
-<img src="./public/assets/images/logo.svg" alt="Wild Oasis Logo" width="200" />
+<img src="https://github.com/callmedeci/Snapgram/blob/main/public/assets/images/logo.svg" alt="Wild Oasis Logo" width="200" />
 
 A social media app where you can create posts, like and save content, explore other users on the People page, and seamlessly sign in and out. Simple, smooth, and built for sharing.
 
